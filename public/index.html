@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor a Tradición</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+    <header class="encabezado">
+        <h1>La Desesperanza</h1>
+    </header>
+
+    <section id="temporada" class="carrusel">
+        <h2>Especialidades de Temporada</h2>
+        <div id="menuTemporada" class="elementos-carrusel-temporada"></div>
+    </section>
+
+    <div class="fondo"></div>
+
+    <section id="menu" class="menu">
+        <h2>Panes Tradicionales</h2>
+        <div id="menuTradicional" class="elementos-carrusel-tradicional"></div>
+    </section>
+    
+    <div id="modalAgregarProducto" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" id="cerrarModal" aria-label="Cerrar modal">&times;</span>
+            <h2>Agregar Producto</h2>
+            <form id="formAgregarProducto">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required>
+                
+                <label for="descripcion">Descripción:</label>
+                <input type="text" id="descripcion" required>
+                
+                <label for="precio">Precio:</label>
+                <input type="number" id="precio" required>
+                
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" id="cantidad" required>
+                
+                <label for="categoria">Categoría:</label>
+                <select id="categoria" required>
+                    <option value="temporada">Temporada</option>
+                    <option value="tradicional">Tradicional</option>
+                </select>
+                
+                <label for="urlimage">URL de la Imagen:</label>
+                <input type="text" id="urlimage" required>
+                
+                <button type="submit" class="boton-agregar">Agregar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalEditarProducto" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" id="cerrarModalEditar" aria-label="Cerrar modal">&times;</span>
+            <h2>Actualizar Producto</h2>
+            <form id="formEditarProducto">
+                <input type="hidden" id="editarId"> <!-- Campo oculto para el ID -->
+                <label for="editarNombre">Nombre:</label>
+                <input type="text" id="editarNombre" required>
+                
+                <label for="editarDescripcion">Descripción:</label>
+                <input type="text" id="editarDescripcion" required>
+                
+                <label for="editarPrecio">Precio:</label>
+                <input type="number" id="editarPrecio" required>
+                
+                <label for="editarCantidad">Cantidad:</label>
+                <input type="number" id="editarCantidad" required>
+                
+                <label for="editarCategoria">Categoría:</label>
+                <select id="editarCategoria" required>
+                    <option value="temporada">Temporada</option>
+                    <option value="tradicional">Tradicional</option>
+                </select>
+                
+                <label for="editarUrlImagen">URL de la Imagen:</label>
+                <input type="text" id="editarUrlImagen" required>
+                
+                <button type="submit" class="boton-agregar">Actualizar</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="agregar">
+            <button id="agregarProductoBtn" class="boton-agregar">Agregar Producto</button>
+        </div>
+    </footer>
+
+    <script src="../index.js"></script>
+    <script src="./scripts/script.js"></script>
+</body>
+</html>

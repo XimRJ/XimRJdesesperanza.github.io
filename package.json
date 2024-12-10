@@ -1,0 +1,24 @@
+{
+  "name": "panaderia",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000X\u0000i\u0000m\u0000R\u0000J\u0000p\u0000a\u0000n\u0000a\u0000d\u0000e\u0000r\u0000i\u0000a\u0000.\u0000g\u0000i\u0000t\u0000h\u0000u\u0000b\u0000.\u0000i\u0000o\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.11.3",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
