@@ -5,7 +5,6 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-// Configurar body-parser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.json());
@@ -14,7 +13,7 @@ app.use(express.static('public'));
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "Y00ng!", // Cambiar la contraseña según sea necesario
+    password: "Y00ng!", // Cambiar la contraseña
     database: "desesperaza"
 });
 
@@ -29,11 +28,9 @@ db.connect(err => {
 const port = 5000;
 
 // Servir el archivo HTML
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/index.html');
-});
+app.use(express.static('public'));
+app.use(express.static('public/html'));
 
-// Registrar un producto
 app.post('/inventario', (req, res) => {
     const { Nombre, Descripcion, Precio, categoria, urlimage, cantidad } = req.body;
     const query = 'INSERT INTO inventario (Nombre, Descripcion, Precio, categoria, urlimage, cantidad) VALUES (?, ?, ?, ?, ?, ?)';
@@ -77,7 +74,7 @@ app.get('/inventario/:PANID', (req, res) => {
     });
 });
 
-// Actualizar un producto por ID
+// Actualizar
 app.put('/inventario/:PANID', (req, res) => {
     const { PANID } = req.params;
     const { Nombre, Descripcion, Precio, categoria, urlimage, cantidad } = req.body;
@@ -95,7 +92,7 @@ app.put('/inventario/:PANID', (req, res) => {
     });
 });
 
-// Eliminar un producto por ID
+// Eliminar
 app.delete('/inventario/:PANID', (req, res) => {
     const { PANID } = req.params;
     const query = 'DELETE FROM inventario WHERE PANID = ?';
@@ -112,7 +109,6 @@ app.delete('/inventario/:PANID', (req, res) => {
     });
 });
 
-// Iniciar el servidor
 app.listen(port, () => {
     console.log(`Servidor corriendo en el puerto ${port}`);
 });

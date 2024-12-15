@@ -48,7 +48,7 @@ cerrarModal.onclick = function() {
     modalAgregarProducto.style.display = 'none';
 }
 
-// Validaciones en tiempo real para los campos de agregar producto
+// Validaciones
 document.getElementById('precio').addEventListener('input', function() {
     this.value = this.value.replace(/[^0-9.]/g, ''); // Solo números y puntos
     if (this.value.split('.').length > 2) this.value = this.value.slice(0, -1); // Evitar más de un punto decimal
@@ -68,7 +68,7 @@ document.getElementById('cantidad').addEventListener('input', function() {
     if (parseInt(this.value) < 0) this.value = ''; // Evitar valores negativos
 });
 
-// Agregar un producto
+// Agregar
 formAgregarProducto.onsubmit = async function(e) {
     e.preventDefault();
 
@@ -105,7 +105,7 @@ formAgregarProducto.onsubmit = async function(e) {
     }
 }
 
-// Eliminar un producto
+// Eliminar
 async function eliminarProducto(id) {
     if (confirm('¿Estás seguro de que deseas eliminar este producto?')) {
         try {
@@ -131,7 +131,7 @@ const modalEditarProducto = document.getElementById('modalEditarProducto');
 const cerrarModalEditar = document.getElementById('cerrarModalEditar');
 const formEditarProducto = document.getElementById('formEditarProducto');
 
-// Modal de edición
+// Editar
 async function abrirModalEditar(id) {
     try {
         const response = await fetch(`http://localhost:5000/inventario/${id}`);
@@ -158,7 +158,7 @@ cerrarModalEditar.onclick = function() {
     modalEditarProducto.style.display = 'none';
 }
 
-// Validaciones en tiempo real para los campos de editar producto
+// Validaciones para Editar
 document.getElementById('editarPrecio').addEventListener('input', function() {
     this.value = this.value.replace(/[^0-9.]/g, ''); // Solo números y puntos
     if (this.value.split('.').length > 2) this.value = this.value.slice(0, -1); // Evitar más de un punto decimal
@@ -178,7 +178,7 @@ document.getElementById('editarCantidad').addEventListener('input', function() {
     if (parseInt(this.value) < 0) this.value = ''; // Evitar valores negativos
 });
 
-// Actualizar un producto
+// Actualizar
 formEditarProducto.onsubmit = async function(e) {
     e.preventDefault();
 
@@ -216,7 +216,7 @@ formEditarProducto.onsubmit = async function(e) {
 }
 
 
-// Cerrar el modal si se hace clic fuera de él
+// Cerrar el modal
 window.onclick = function(event) {
     if (event.target === modalEditarProducto) {
         modalEditarProducto.style.display = 'none';
@@ -226,5 +226,4 @@ window.onclick = function(event) {
     }
 };
 
-// Cargar productos al inicio
 cargarInventario();

@@ -1,4 +1,5 @@
 CREATE DATABASE desesperaza;
+-- Drop Database desesperaza;
 USE desesperaza;
 CREATE TABLE inventario (
     PANID INT AUTO_INCREMENT PRIMARY KEY,
@@ -13,6 +14,13 @@ INSERT INTO inventario (nombre, descripcion, precio, categoria, urlimage, cantid
 ('Pan de Muerto', 'Pan dulce tradicional mexicano, suave y esponjoso, con un toque de sabor a naranja y cubierto con azúcar. Ideal para recordar a los seres queridos en el Día de Muertos.', 15.00, 'Temporada', 'https://i.pinimg.com/564x/7b/37/69/7b3769685fe991b3265046c5c6955a66.jpg', 100),
 ('Donitas', 'Esponjosas donitas glaseadas con diferentes sabores, perfectas para un antojo dulce.', 20.00, 'Tradicional', 'https://i.pinimg.com/236x/66/75/fe/6675fe80cec7c9ae75aedeb53a20134d.jpg', 150),
 ('Chocolatin', 'Delicioso y hojaldrado, el chocolatin está relleno de una rica mezcla de chocolate oscuro y avellanas.', 20.00, 'Tradicional', 'https://i.pinimg.com/564x/36/c7/5f/36c75ffa8507cc0d30c1874c22f7ec4e.jpg', 100);
+
+CREATE TABLE carrito (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    PANID INT NOT NULL,
+    cantidad INT NOT NULL,
+    FOREIGN KEY (PANID) REFERENCES inventario(PANID)
+);
 
 CREATE TABLE clientes (
     cliente_id INT AUTO_INCREMENT PRIMARY KEY,

@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Raleway', sans-serif;
+    background-image: url("https://i.pinimg.com/736x/14/3d/d4/143dd43605eab0712dbeb47a34b06ca3.jpg");
+    color: #616852;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #78211e;
+    padding: 20px;
+    border-radius: 30px;
+    text-align: left;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.formulario {
+    padding: 20px;
+    border-radius: 30px;
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+}
+
+form{
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+form.active {
+    display: flex;
+}
+
+.icon {
+    margin-top: -20px;
+    width: 20px;
+}
+
+h2 {
+    font-family: 'Bebas Neue', Arial, sans-serif;
+    letter-spacing: 5px;
+    font-size: 2rem;
+    color: #4e7d4b;
+    margin-bottom: 20px;
+}
+
+.inputs {
+    width: calc(100% - 20px);
+    max-width: 400px;
+    margin: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid transparent;
+    border-color: #beb3ac;
+    border-radius: 8px;
+    outline: none;
+    background: #e1e1e1;
+    color: #333333;
+}
+
+.inputsnac {
+    width: calc(100% - 20px);
+    max-width: 400px;
+    margin: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid transparent;
+    border-color: #beb3ac;
+    border-radius: 8px;
+    outline: none;
+    background: #e1e1e1;
+    color: #666;
+}
+
+.apartado {
+    display: flex;
+}
+
+
+.btn_aceptar {
+    color: #333;
+    text-decoration: none;
+    border: 2px solid #333;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-carrito:hover {
+    background-color: #820115;
+    color: #fff;
+}
+a {
+    text-decoration: none;
+    color: #beb3ac;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #616852;
+}
+
+/* Responsividad */
+@media screen and (max-width: 768px) {
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .inputs {
+        font-size: 0.9rem;
+    }
+
+    .inputRegistro {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btn_aceptar {
+        font-size: 0.9rem;
+    }
+}
