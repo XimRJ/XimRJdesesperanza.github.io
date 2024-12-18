@@ -3,24 +3,27 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="../img/icon.png">
-        <title>Inicio de Sesión</title>
+        <title>Iniciar Sesión</title>
         <link rel="stylesheet" href="../styles/sesion.css">
-        <link rel="stylesheet" href="../styles/styles.css">
     </head>
     <body>
-        <div class="container">
-            <a href="index.html">Regresar</a>
+        
 
-            <div class="formulario">
-                <h2>Iniciar Sesión</h2>
-                    <form  id="form_login" class="name active">
-                        <input type="text" placeholder="Email" required class="inputs" id="input_email">
-                        <input type="password" placeholder="Contraseña" required class="inputs" id="input_password">
-                        
-                        <input type="submit" class="btn-carrito" value="Aceptar">
-                    </form>
+        <div class="contenedorLogin">
+            <a href="index.html">Regresar</a>
+            <h2>Iniciar Sesión</h2>
+            <div class="contenedorForm">
+                <form  id = 'loginForm'>
+                    <input type="email" id="correo" name="correo" required placeholder="Email">
+                    <br>
+                    <input type="password" id="password" name="password" required placeholder="Contraseña" >
+                    <br>
+                    <input type="submit" class="btn-carrito" value="Aceptar">
+                </form>
             </div>
+            <a href="./registrar.html">Registrarse</a>
         </div>
     </body>
+    <script src="../index.js"></script>
+    <script src="../scripts/sesion.js"></script>
 </html>

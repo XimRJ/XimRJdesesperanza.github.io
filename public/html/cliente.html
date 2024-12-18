@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor a Tradición</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+    <header class="menu1">
+        <div class="menu-container">
+            <nav>
+                <a href="./index.html" class="btn-carrito">Cerrar Sesión</a>
+            </nav>
+        </div>
+    </header>
+
+    <header class="encabezado">
+        <h1>La Desesperanza</h1>
+    </header>
+
+    <section id="temporada" class="carrusel">
+        <h2>Especialidades de Temporada</h2>
+        <div id="menuTemporada" class="elementos-carrusel-temporada"></div>
+    </section>
+
+    <div class="fondo"></div>
+
+    <section id="menu" class="menu">
+        <h2>Panes Tradicionales</h2>
+        <div id="menuTradicional" class="elementos-carrusel-tradicional"></div>
+    </section>
+
+    <footer>
+        <button id="abrirModal"  class="btn-carrito">Ver Carrito</button>
+    </footer>
+
+        <div id="modalCarrito" class="modal">
+            <div class="modal-contenido">
+                <span class="cerrar-modal">&times;</span>
+                <h2>Tu Carrito</h2>
+                <div class="contenedor-carrito">
+
+                </div>
+                <div id="carritoTotal">Total: $0.00 MXN</div>
+                <button id="cerrar-modal"class="btn-carrito">Cerrar</button>
+                <button id="mostrarTicket" class="btn-carrito">Comprar</button>
+            </div>
+        </div>
+        
+        <div id="modalTicket" class="modal-t">
+            <div class="modal-contenido-t">
+                <span id="cerrarTicket" class="cerrar-modal-t">&times;</span>
+                <h2 id="nombreNegocio">Nombre del Negocio</h2>
+                <p id="fechaCompra"></p>
+                <div id="productosComprados">
+                    <h3>Productos Comprados:</h3>
+                    <ul></ul>
+                </div>
+                <p id="totalAPagar"></p>
+                <p id="numeroVenta"></p>
+            </div>
+        </div>
+        
+    <script src="../index.js"></script>
+    <script src="./scripts/cliente.js"></script>
+</body>
+</html>

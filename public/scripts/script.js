@@ -226,4 +226,5 @@ window.onclick = function(event) {
     }
 };
 
+
 cargarInventario();

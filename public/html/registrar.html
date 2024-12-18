@@ -3,28 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="icon" href="../img/icon.png">
-    <title>Dreabit - Registrarse</title>
-    <link rel="stylesheet" href="../styles/sesion.css">
-    <link rel="stylesheet" href="../styles/styles.css">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="../styles/sesion.css"> 
 </head>
-
-<body> 
-    <div class="container">
+<body>
+    <div class="contenedorRegister">
         <a href="index.html">Regresar</a>
-
-        <div class="formulario">
+        <div class="contenedorForm">
             <h2>Registrarse</h2>
-                <form  id="form_login" class="name active">
-                    <input type="text" placeholder="Nombre" required class="inputs" id="input_name">
-                    <input type="text" placeholder="Email" required class="inputs" id="input_email">
-                    <input type="password" placeholder="Contraseña" required class="inputs" id="input_password">
-                    
-                    <input type="submit" class="btn-carrito" value="Aceptar">
-                </form>
-        </div>
-    </div>
-</body>
+            <form id="signupForm">
 
+                <input type="text" id="nombre" placeholder="Nombre" name="nombre" required><br>
+                <input type="email" id="correo" placeholder="Email"  name="correo" required><br>
+                <input type="password" id="password" placeholder="Contraseña"  name="password" required><br>
+
+                <input type="submit" class="btn-carrito" value="Aceptar">
+            </form>
+        </div>
+        <a href="./iniciosesion.html">Iniciar Sesion</a>
+    </div>
+    <script src="../index.js"></script>
+    <script src="../scripts/registro.js"></script>
+
+</body>
 </html>
