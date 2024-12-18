@@ -1,3 +1,4 @@
+/* Reset y configuración global */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,33 +8,46 @@
 body {
     font-family: 'Raleway', sans-serif;
     background-image: url("https://i.pinimg.com/736x/14/3d/d4/143dd43605eab0712dbeb47a34b06ca3.jpg");
+    background-size: cover;
+    background-attachment: fixed;
     color: #616852;
-    margin: 20px;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
 }
 
+/* Encabezados */
 h2 {
     font-family: 'Bebas Neue', Arial, sans-serif;
     letter-spacing: 5px;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #e1e1e1;
     margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    animation: slideDown 0.8s ease-in-out;
 }
 
-.contenedorLogin, .contenedorRegister {
-    background-color: #78211e;
-    padding: 20px;
+/* Contenedores principales */
+.contenedorLogin, 
+.contenedorRegister {
+    background-color: rgba(120, 33, 30, 0.9); /* Opacidad para mostrar el fondo */
+    padding: 30px;
     border-radius: 30px;
     text-align: left;
     width: 90%;
     max-width: 800px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    animation: zoomIn 0.5s ease-in-out;
 }
 
-.contenedorForm, .signupForm {
+/* Formularios */
+.contenedorForm, 
+.signupForm {
     padding: 20px;
     border-radius: 30px;
     text-align: center;
@@ -41,73 +55,64 @@ h2 {
     max-width: 800px;
 }
 
-input[type="text"],
-input[type="email"],
+/* Inputs */
+input[type="text"], 
+input[type="email"], 
 input[type="password"] {
     width: calc(100% - 20px);
     max-width: 400px;
-    margin: 10px;
-    padding: 10px;
+    margin: 10px 0;
+    padding: 12px;
     font-size: 1rem;
     border: 2px solid #beb3ac;
     border-radius: 8px;
     outline: none;
-    background: #e1e1e1;
-    color: #333333;
-    transition: color 0.3s ease, background 0.3s ease;
+    background: #f7f7f7;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
+input[type="text"]:focus, 
+input[type="email"]:focus, 
 input[type="password"]:focus {
-    color: #666;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
 }
 
-button, .btn_aceptar {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
+.btn-carrito {
+    margin: 20px;
+    color: #333;
+    text-decoration: none;
+    border: 2px solid #333;
     padding: 10px 20px;
     border-radius: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-button {
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-}
-
-.btn_aceptar {
-    color: #333;
-    border-color: #333;
-}
-
-button:hover {
-    background-color: #2868a2;
-}
-
-.btn_aceptar:hover {
-    background-color: #820115;
+.btn-carrito:hover {
+    background-color: #006400;
     color: #fff;
 }
 
+/* Enlaces */
 a {
     text-decoration: none;
     color: #beb3ac;
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 a:hover {
-    color: #616852;
+    color: #ffffff;
+    text-shadow: 0 2px 5px rgba(255, 255, 255, 0.6);
 }
 
+/* Media Queries */
 @media screen and (max-width: 768px) {
     h2 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     button, .btn_aceptar {
@@ -116,11 +121,43 @@ a:hover {
 }
 
 @media screen and (max-width: 480px) {
-    h1 {
-        font-size: 1.5rem;
+    h2 {
+        font-size: 1.8rem;
     }
 
     .contenedorLogin, .contenedorRegister {
-        padding: 1.5rem;
+        padding: 20px;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
     }
 }
